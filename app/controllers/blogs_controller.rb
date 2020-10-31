@@ -7,18 +7,22 @@ class BlogsController < ApplicationController
     @blogs = Blog.new
   end
 
-  def create
-    @blogs = Blog.new(blog_params)
-      if @blog.save
-        redirect_to '/blogs'
-      else
-        render 'new'
-      end
-    end 
-
   def show
+    @blogs= Blog.find(params[:id])
   end
 
   def edit
+    @blogs= Blog.edit
   end
-end
+
+  def create
+    @blogs = Blog.create(blog_params)
+        redirect_to blogs_path(@blogs)
+    end
+
+#maybe take this out so that it can be read publicly
+  private
+    def blog_params
+      params.require(:blog).permit(:message)
+    end
+  end
