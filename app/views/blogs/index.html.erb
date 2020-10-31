@@ -1,5 +1,8 @@
 <h1>Coder's Block</h1>
-<h3></h3>
+<h3>Confessions of a Developing Developer</h3>
+
+<%= link_to 'New Blog', "blogs/new" %>
+
 <% @blogs.each do |blog| %>
 <div class="blog">
 
@@ -12,5 +15,7 @@
   <p class="time"><%= blog.created_at %></p>
 </div>
 
-<%= link_to 'New Blog', "blogs/new" %>
+
+<%= button_to "Bye Blog", blogs_path, method: :destroy%>
+<%= button_to 'Edit Blog', 'blogs#edit' %>
 <% end %>

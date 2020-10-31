@@ -8,11 +8,16 @@ class BlogsController < ApplicationController
   end
 
   def show
-    @blogs= Blog.find(params[:id])
+    @blogs = Blog.find(params[:id])
   end
 
   def edit
-    @blogs= Blog.edit
+    @blogs = Blog.find(params[:id])
+  end
+
+  def update
+    @blog = Blog.update(blog_params)
+    redirect_to blog_path(@blog)
   end
 
   def create
@@ -20,9 +25,16 @@ class BlogsController < ApplicationController
         redirect_to blogs_path(@blogs)
     end
 
-#maybe take this out so that it can be read publicly
+  def destroy
+    @blog = Blog.find(params[:id])
+    @blog.destroy
+    redirect_to blogs_path
+  end
+
   private
     def blog_params
-      params.require(:blog).permit(:message)
+      params.require(:blog).permit(:framework, :message)
     end
+#this is essential for the create to work but the delete and edit routes then are mad
+
   end
