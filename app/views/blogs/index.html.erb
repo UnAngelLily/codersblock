@@ -1,0 +1,14 @@
+<h1>Coder's Block</h1>
+<h3></h3>
+<% @blogs.each do |blog| %>
+<div class="blog">
+
+  <h3>Title:</h3>
+    <p class="name"><%= blog.name %></p>
+
+  <h3>Framework(s):</h3>
+    <p class="framework"><%=  blog.framework %></p>
+    <p class="message"><%= blog.message %></p>
+  <p class="time"><%= blog.created_at %></p>
+</div>
+<% end %>
