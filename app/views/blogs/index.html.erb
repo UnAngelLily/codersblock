@@ -16,6 +16,6 @@
 </div>
 
 
-<%= button_to "Bye Blog", blogs_path, method: :destroy%>
-<%= button_to 'Edit Blog', 'blogs#edit' %>
+<%= link_to "Bye Blog", blog_path(blog), method: :destroy%>
+<%= link_to 'Edit Blog', edit_blog_path(blog) %>
 <% end %>

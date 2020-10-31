@@ -2,11 +2,11 @@
 <p>Find me in app/views/blogs/show.html.erb</p>
 
 <h3>Title:</h3>
-  <p class="name"><%= blog.name %></p>
+  <p class="name"><%=@blog.name %></p>
 
 <h3>Framework(s):</h3>
-  <p class="framework"><%=  blog.framework %></p>
-  <p class="message"><%= blog.message %></p>
-<p class="time"><%= blog.created_at %></p>
+  <p class="framework"><%=  @blog.framework %></p>
+  <p class="message"><%= @blog.message %></p>
+<p class="time"><%= @blog.created_at %></p>
 
 <%= link_to 'All Blog Post', "/blogs" %>
