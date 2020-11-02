@@ -5,24 +5,36 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title></title>
   </head>
-  <body>
-
-<h1>Blogs#new</h1>
-<p>Find me in app/views/blogs/new.html.erb</p>
-<%= form_for(@blog) do |f| %>
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_area :name %><br />
-    <%= f.label :framework %><br />
-    <%= f.text_area :framework %><br />
-    <%= f.label :message %><br />
-    <%= f.text_area :message %><br />
-  </div>
-  <div class="actions">
-    <%= f.submit "Bloggin' my Bugs  away" %>
-  </div>
-  <%= link_to 'Let me rethink that... back to the Blogs', "/blogs" %>
-<% end %>
+  <body class="bg-red-700">
+    <div class="px-8 py-12">
+     <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img class="rounded-lg md:w-56" src="https://i.imgur.com/GUxN3O1.gif" alt="Moss Fire">
+      </div>
+      <div class="mt-4 md:mt-0 md:ml-6">
+        <div class="uppercase tracking-wide text-sm text-black-900 font-bold">What's Wrong this Time?</div>
+        <h4 class="block mt-1 text-lg leading-tight font-semibold text-gray-700">Make a New Post</h4>
+        <center>
+          <h3 class="mt-2 text-gray-900">
+          <%= form_for(@blog) do |f| %>
+            <div class="field">
+              <%= f.label :name %><br />
+              <%= f.text_area :name %><br />
+              <%= f.label :framework %><br />
+              <%= f.text_area :framework, col:"50", row:"30" %><br />
+              <%= f.label :message %><br />
+              <%= f.text_area :message, col:"50", row:"30" %><br />
+            </div><br />
+            <div class="actions">
+              <%= f.submit "Bloggin' my Bugs away" %>
+            </div>
+              <p class="text-gray-700 hover:underline"><br />
+                <%= link_to 'Let me rethink that... back to the Blogs', "/blogs" %>
+              </p>
+            </center>
+          <% end %>
 
 </body>
 </html>
+<!-- <h1>Blogs#new</h1>
+<p>Find me in app/views/blogs/new.html.erb</p> -->

@@ -5,19 +5,31 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title></title>
   </head>
-  <body>
+  <body class="bg-red-700">
+    <div class="px-8 py-12">
+     <div class="md:flex">
+      <div class="md:flex-shrink-0">
+        <img class="rounded-lg md:w-56" src="https://i.imgur.com/7b9MeHY.gif" alt="stare in horror">
+      </div>
+      <div class="mt-4 md:mt-0 md:ml-6">
+        <div class="uppercase tracking-wide text-sm text-black-900 font-bold">What's Wrong this Time?</div>
+        <h4 class="block mt-1 text-lg leading-tight font-semibold text-gray-700">Make a New Post</h4>
+        <center>
 
-<h1>Blogs#show</h1>
-<p>Find me in app/views/blogs/show.html.erb</p>
 
-<h3>Title:</h3>
+
+<h3 class="mt-2 text-gray-900">Title:</h3>
   <p class="name"><%=@blog.name %></p>
 
-<h3>Framework(s):</h3>
+<h3 class="mt-2 text-gray-900"Framework(s):</h3>
   <p class="framework"><%=  @blog.framework %></p>
   <p class="message"><%= @blog.message %></p>
 <p class="time"><%= @blog.created_at %></p>
 
 <%= link_to 'All Blog Post', "/blogs" %>
+
+</center>
 </body>
 </html>
+<!-- <h1>Blogs#show</h1>
+<p>Find me in app/views/blogs/show.html.erb</p> -->

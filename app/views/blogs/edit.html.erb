@@ -5,32 +5,38 @@
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <title></title>
   </head>
-  <body>
-
-    <div class="md:flex">
+  <body class="bg-red-700">
+    <div class="px-8 py-12">
+     <div class="md:flex">
       <div class="md:flex-shrink-0">
-        <img class="rounded-lg md:w-56" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80" alt="Woman paying for a purchase">
+        <img class="rounded-lg md:w-56" src="https://i.imgur.com/KXDrpBf.giff" alt="Unexpected Reboot">
       </div>
       <div class="mt-4 md:mt-0 md:ml-6">
-        <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">Marketing</div>
-        <a href="#" class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline">Finding customers for your new business</a>
-        <p class="mt-2 text-gray-600">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+        <div class="uppercase tracking-wide text-sm text-black-900 font-bold">Have you tried turning it off and on again?</div>
+        <h4 class="block mt-1 text-lg leading-tight font-semibold text-gray-700">Edit This Blog Post</h4>
+        <center>
+          <h3 class="mt-2 text-gray-900">
+            <%= form_for @blog do |f| %>
+              <%= f.label :name %><br />
+              <%= f.text_area :name %><br />
+              <%= f.label :framework %><br />
+              <%= f.text_area :framework, col:"50", row:"30" %><br />
+              <%= f.label :message %><br />
+              <%= f.text_area :message, cols:"50", row:"30" %><br />
+              <%= f.submit value="Changing a few things" %><br />
+              <br />
+            <p class="text-gray-700 hover:underline">
+              <%= link_to 'Nevermind, back to the Blogs', "/blogs" %>
+            </p>
+            <% end %>
+          </h3>
+        </center>
       </div>
     </div>
 
-<h1>Blogs#edit</h1>
-<p>Find me in app/views/blogs/edit.html.erb</p>
-
-  <h1>That's not right. Let's edit this blog...</h1>
-  <%= form_for @blog do |f| %>
-    <%= f.label :name %><br />
-    <%= f.text_area :name %><br />
-    <%= f.label :framework %><br />
-    <%= f.text_area :framework %><br />
-    <%= f.label :message %><br />
-    <%= f.text_area :message %><br />
-    <%= f.submit value="Changing a few things" %>
-    <%= link_to 'Nevermind, back to the Blogs', "/blogs" %>
-  <% end %>
+  </div>
 </body>
 </html>
+
+<!-- <h1>Blogs#edit</h1>
+<p>Find me in app/views/blogs/edit.html.erb</p> -->

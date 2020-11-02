@@ -6,28 +6,43 @@
     <title></title>
   </head>
   <body>
+<body class="bg-red-700">
+  <div class="px-8 py-12">
+   <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="rounded-lg md:w-56" src="https://i.imgur.com/ZPL7kUB.gif" alt="Moss Throw Computer">
+    </div>
+    <div class="mt-4 md:mt-0 md:ml-6">
+      <div class="uppercase tracking-wide text-sm text-black-900 font-bold">Coder's Block: How Many things can I break with one character?</div>
+      <h4 class="block mt-1 text-lg leading-tight font-semibold text-gray-700">Confessions of a Developing Developer</h4>
+<br />
+<center>
+  <p class="text-gray-700 hover:underline"
+    <%= link_to 'New Blog', "blogs/new" %>
+  </p>
 
+  <div class="p12">
+      <% @blogs.each do |blog| %>
+      <div class="blog bg-white rounded-lg overflow-hidden shadow-xl mt-4 md:mt-0 md:ml-6 box-border p-4 border-4 border-gray-400 bg-gray-200 text-left w-full">
+        <h2 class="text-lg text-gray-600">Title:</h2>
+          <h5 class="text-gray-900"><%= blog.name %></h5><br />
+            <hr>
+              <h2 class="text-lg text-gray-600">Framework(s):</h2>
+                <p class="framework"><%= blog.framework %></p><br />
+                  <hr>
+                    <p class="message"><%= blog.message %></p><br />
+                      <hr>
+                        <p class="time text-lg text-gray-600"><%= blog.created_at %></p><br />
+                            <p class="text-gray-700 hover:underline">
+                              <%= link_to "Bye Blog", blog_path(blog), :method => :delete%>
+                            </p>
+                            <p class="text-gray-700 hover:underline">
+                              <%= link_to 'Edit Blog', edit_blog_path(blog) %>
+                            </p></span>
 
-<h1>Coder's Block</h1>
-<h3>Confessions of a Developing Developer</h3>
-
-<%= link_to 'New Blog', "blogs/new" %>
-
-<% @blogs.each do |blog| %>
-<div class="blog">
-
-  <h3>Title:</h3>
-    <p class="name"><%= blog.name %></p>
-
-  <h3>Framework(s):</h3>
-    <p class="framework"><%= blog.framework %></p>
-    <p class="message"><%= blog.message %></p>
-  <p class="time"><%= blog.created_at %></p>
-</div>
-
-
-<%= link_to "Bye Blog", blog_path(blog), :method => :delete%>
-<%= link_to 'Edit Blog', edit_blog_path(blog) %>
+    </div>
+  </center>
+ </div>
 <% end %>
 
 </body>
