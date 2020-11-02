@@ -10,12 +10,12 @@
     <p class="name"><%= blog.name %></p>
 
   <h3>Framework(s):</h3>
-    <p class="framework"><%=  blog.framework %></p>
+    <p class="framework"><%= blog.framework %></p>
     <p class="message"><%= blog.message %></p>
   <p class="time"><%= blog.created_at %></p>
 </div>
 
 
-<%= link_to "Bye Blog", blog_path(blog), method: :destroy%>
+<%= link_to "Bye Blog", blog_path(blog), :method => :delete%>
 <%= link_to 'Edit Blog', edit_blog_path(blog) %>
 <% end %>
