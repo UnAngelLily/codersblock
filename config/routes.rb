@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
 
   #/welcome in website refers to pages_controller.rb
+
 end
