@@ -6,19 +6,22 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 
+# gem 'pg', '>= 0.18', '< 2.0'
 
 # Use sqlite3 as the database for Active Record
-# gem 'sqlite3', '~> 1.4'
+gem 'sqlite3', '~> 1.4'
 
 # Use PostgreSQL
-# gem 'pg', '~> 0.13.2' -- This doesn't work because of Apple settings blocking it, can't use homebrew to install and fix.
+# gem 'pg', '~> 0.13.2'
 
-group :development, :test do
-  gem 'sqlite3'
-end
-group :production do
-  gem 'pg'
-end
+#-- This doesn't work because of Apple settings blocking it, can't use homebrew to install and fix.
+
+# group :development, :test do
+#   gem 'sqlite3'
+# end
+# group :production do
+#   gem 'pg'
+# end
 
 
 # Use Puma as the app server

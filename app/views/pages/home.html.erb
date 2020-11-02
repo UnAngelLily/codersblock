@@ -1,7 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Coder's Block - Confessions of a Confused Developing Developer</title>
+    <% csrf_meta_tags %>
+    <% csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="antialiased text-base text-gray-100 bg-black">
+    <%= yield %>
+
 <div class="main">
   <div class="container">
     <h1>Hello my name is Lily</h1>
     <p>I make Rails apps.</p>
-    <%= link_to 'Coder\'s Confessions about being a developing Developer', "/blogs" %>
+    <%= link_to 'Coder\'s Block, Confessions about developing into a Developer', "/blogs" %>
   </div>
 </div>
+
+</body>
+</html>
